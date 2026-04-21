@@ -1,19 +1,47 @@
 //Important. MembershipPlan must be an abstract class and it must implement the Billable interface.
-public abstract class GymMembershipPlan implements Billable{
+public abstract class MembershipPlan implements Billable{
 
     //The MembershipPlan class should store:
 
     private String planCode;
-    private String clientName - client name or company name,
-    private int months - plan duration in months,
-    private double baseMonthlyFee - base monthly fee,
-    private boolean autoRenew - information whether the plan is renewed automatically.
+    private String clientName;
+    private int months;
+    private double baseMonthlyFee;
+    private boolean autoRenew;// - information whether the plan is renewed automatically.
 
     //In the MembershipPlan class, prepare:
     //
     //a constructor initializing the shared fields,
-    //getters for fields needed in subclasses and in the main method,
 
+    public MembershipPlan(String planCode, String clientName, int months,
+                          double baseMonthlyFee, boolean autoRenew){
+        this.planCode=planCode;
+        this.clientName=clientName;
+        this.months=months;
+        this.baseMonthlyFee=baseMonthlyFee;
+        this.autoRenew=autoRenew;
+    }
+
+    //getters for fields needed in subclasses and in the main method,
+    public String getPlanCode(){
+        return planCode;
+    }
+
+    public String getClientName(){
+        return clientName;
+    }
+
+    public int getMonths(){
+        return months;
+    }
+
+    public double getBaseMonthlyFee(){
+        return  baseMonthlyFee;
+    }
+
+    public boolean isAutoRenew(){
+        return autoRenew;
+    }
 
 
     //an abstract method String getPlanType(),
