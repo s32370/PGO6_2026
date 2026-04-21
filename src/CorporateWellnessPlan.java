@@ -13,8 +13,7 @@ public class CorporateWellnessPlan extends MembershipPlan implements Freezable,R
     public CorporateWellnessPlan(String planCode, String clientName, int months,
                                  double baseMonthlyFee, boolean autoRenew,
                                  int employeeCount, int workshopsPerMonth, boolean onlineDashboard){
-        super(String planCode, String clientName, int months,
-        double baseMonthlyFee, boolean autoRenew);
+        super(String planCode, String clientName, int months, double baseMonthlyFee, boolean autoRenew);
         this.employeeCount=employeeCount;
         this.workshopsPerMonth=workshopsPerMonth;
         this.onlineDashboard=onlineDashboard;
@@ -26,7 +25,7 @@ public class CorporateWellnessPlan extends MembershipPlan implements Freezable,R
     }//implement calculateMonthlyNetPrice(),
 
     @Override
-    public double calculateMonthlyNerPrice(){
+    public double calculateMonthlyNetPrice(){
         double price = getBaseMonthlyFee()+(employeeCount*18)+(workshopsPerMonth*220);
         //Calculate the monthly net price exactly as follows:
         //

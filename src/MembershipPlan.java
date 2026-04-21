@@ -58,16 +58,22 @@ public abstract class MembershipPlan implements Billable{
     } //returning the gross price for one month,
 
     public double calculateTotalNetPrice(){
-
+            return calculateMonthlyNetPrice() * months;
     } //returning the net value of the whole contract,
 
     final void printSummary(){
+        System.out.println("Plan Code: " + planCode);
+        System.out.println("Client Name: " + clientName);
+        System.out.println("Plan Type: " + getPlanType());
+        System.out.println("Monthly Net Price: " + calculateMonthlyNetPrice());
+        System.out.println("Monthly Gross Price: " + calculateMonthlyGrossPrice());
+        System.out.println("Total Net Price: " + calculateTotalNetPrice());
 
     } //printing the basic data, monthly net price, monthly gross price, and full contract value,
 
     //toString() method returning a readable object description.
     @Override
     public String toString(){
-
+        return "MembershipPlan:" + "planCode='" + planCode + '\'' + ", clientName='" + clientName + '\'' + ", months=" + months + ", baseMonthlyFee=" + baseMonthlyFee + ", autoRenew=" + autoRenew;
     }
 }
